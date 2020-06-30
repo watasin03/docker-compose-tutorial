@@ -1,0 +1,27 @@
+version: '3'
+  
+services:
+  node_me:
+    image: nodeme
+    build: 
+      context: ./api1/
+      dockerfile: Dockerfile
+    ports: 
+      - "3001:3001"
+    container_name: nodeme
+  node_hello:
+    image: nodehello
+    build: 
+      context: ./api2/
+      dockerfile: Dockerfile
+    ports: 
+        - "3002:3002"
+    container_name: nodehello
+  node_time:
+    image: nodetime
+    build: 
+      context: ./api3/
+      dockerfile: Dockerfile
+    ports: 
+        - "3003:3003"
+    container_name: nodetime
